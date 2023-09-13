@@ -1,7 +1,6 @@
 // App.js
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import StartScreen from './StartScreen'; 
 import {questionsWithYesAnswer, questionsWithNoAnswer} from './Question'
 
 function App() {
@@ -10,8 +9,6 @@ function App() {
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(10);
   const [selectedQuestions, setSelectedQuestions] = useState([]);
-  const [gameStarted, setGameStarted] = useState(false); // Track if the game has started
-  const [numberOfQuestions, setNumberOfQuestions] = useState(0);
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -30,7 +27,7 @@ function App() {
   useEffect(() => {
     const allQuestions = [...questionsWithYesAnswer, ...questionsWithNoAnswer];
     const shuffledQuestions = shuffle(allQuestions);
-    setSelectedQuestions(shuffledQuestions.slice(0, numberOfQuestions));
+    setSelectedQuestions(shuffledQuestions.slice(0, 10));
     setQuestions(shuffledQuestions);
   }, []);
 
@@ -65,11 +62,6 @@ function App() {
       setQuestions([]);
       setGameStarted(false); 
     }
-  };
-
-  const onStartGame = (numberOfQuestions) => {
-    setNumberOfQuestions(numberOfQuestions);
-    setGameStarted(true);
   };
   
   return (

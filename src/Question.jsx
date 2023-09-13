@@ -200,4 +200,7 @@ Is the Moon a disco ball?`
 export const questionsWithYesAnswer = convertToArray(YesAnswerString);
 export const questionsWithNoAnswer = convertToArray(NoAnswerString);
 
+// export const questionsWithYesAnswer = ["Is the sky typically blue during the day?", "Can birds fly?", "Is water wet?", "Is the Earth round?", "Do dogs have four legs?", "Is 2 + 2 equal to 4?", "Is the sun a source of light?", "Are bananas a type of fruit?", "Can humans breathe underwater without assistance?", "Is New York City located in the United States?"]
+// export const questionsWithNoAnswer = ["Is the moon made of cheese?", "Are penguins capable of flying?", "Is the Sahara Desert covered in lush vegetation?", "Do snakes have legs?", "Is Earth's nearest star the Moon?", "Is the capital of France London?", "Can you hear sound in a vacuum?", "Is Antarctica a tropical paradise?", "Is ice cream typically served hot?", "Is the speed of light slower than the speed of sound?"]
+
 export default {questionsWithYesAnswer, questionsWithNoAnswer};
