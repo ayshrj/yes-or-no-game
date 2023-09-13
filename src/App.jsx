@@ -1,7 +1,11 @@
 // App.js
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import {questionsWithYesAnswer, questionsWithNoAnswer} from './Question'
+import {YesAnswerString, NoAnswerString} from './Question'
+
+function convertToArray(inputString) {
+  return inputString.split('\n').filter(item => item.trim() !== '');
+}
 
 function App() {
   const [questions, setQuestions] = useState([]);
@@ -9,6 +13,8 @@ function App() {
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(10);
   const [selectedQuestions, setSelectedQuestions] = useState([]);
+  const questionsWithYesAnswer = convertToArray(YesAnswerString);
+  const questionsWithNoAnswer = convertToArray(NoAnswerString);
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -60,10 +66,9 @@ function App() {
       setTimer(10);
     } else {
       setQuestions([]);
-      setGameStarted(false); 
     }
   };
-  
+
   return (
     <div className="container">
       {questions.length > 0 ? (
